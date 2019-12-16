@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/saquqocuza/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.sk-fading-circle {
+  margin-top: 50px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  margin: 40px auto;
+}
+.sk-fading-circle .sk-circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sk-fading-circle .sk-circle:nth-child(2){
+  transform: rotate(60deg);
+}
+
+.sk-fading-circle .sk-circle:nth-child(3){
+  transform: rotate(120deg);
+}
+.sk-fading-circle .sk-circle:nth-child(4){
+  transform: rotate(180deg);
+}
+.sk-fading-circle .sk-circle:nth-child(5){
+  transform: rotate(240deg);
+}
+.sk-fading-circle .sk-circle:nth-child(6){
+  transform: rotate(300deg);
+}
+.sk-fading-circle .sk-circle:before {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 16%;
+  height: 16%;
+  background-color: #fa2c50;
+  border-radius: 50%;
+  animation: move 3s linear infinite;
+}
+
+@keyframes move{
+    10% {
+        transform: translateY(-20px);
+    }
+    20%,100% {
+        transform: translate(0);
+    }
+}
+
+.sk-fading-circle .sk-circle:nth-child(2):before{
+  animation-delay: .5s;
+}
+.sk-fading-circle .sk-circle:nth-child(3):before{
+  animation-delay: 1s;
+}
+.sk-fading-circle .sk-circle:nth-child(4):before{
+  animation-delay: 1.5s;
+}
+.sk-fading-circle .sk-circle:nth-child(5):before{
+  animation-delay: 2s;
+}
+.sk-fading-circle .sk-circle:nth-child(6):before{
+  animation-delay: 2.5s;
+}
+</style>
+</head>
+<body>
+ <div class="sk-fading-circle">
+   <div class="sk-circle"></div>
+   <div class="sk-circle"></div> 
+   <div class="sk-circle"></div>
+   <div class="sk-circle"></div>
+   <div class="sk-circle"></div>
+   <div class="sk-circle"></div>
+  </div>
+</body>
+</html>

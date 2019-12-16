@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .mouth {
+        fill: none;
+        stroke: #00B51D;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-dasharray: 44,44;
+        transform-origin: center;
+        animation: mounthAni 2.3s ease-out infinite;
+    }
+    @keyframes mounthAni {
+        40% {
+            stroke-dasharray: 44, 22;   /* 间距改为1/4 */
+        }
+        80%, 100% {
+            stroke-dasharray: 44, 44;   /* 间距恢复为1/2 */
+            transform: rotate(720deg);
+        }
+    }
+
+    .eye {
+        fill: none;
+        stroke: #00B51D;
+        stroke-width: 5;
+        stroke-linecap: round;
+        stroke-dasharray: 0, 66;
+        transform: rotate(-45deg);
+        transform-origin: center;
+        animation: eyeAni 2.3s ease-in-out infinite;
+    }
+    @keyframes eyeAni {
+        40% {
+            /* stroke-dasharray: 0, 77;    间距改为7/8 */
+        }
+        80%, 100% {
+            transform: rotate(675deg);  /* 间距恢复为3/4 */
+            /* stroke-dasharray: 0, 66; */
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <svg width="100" height="100">
+        <circle class="mouth" cx="50" cy="50" r="14"></circle>
+        <circle class="eye" cx="50" cy="50" r="14"></circle>
+    </svg>
+</body>
+</html>
