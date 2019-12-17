@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/cihazaciwi/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+.wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.big {
+  width: 80px;
+  height: 80px;
+  background: #abcdef;
+  border-radius: 50%;
+  clip-path: polygon(0 0,100% 0,50% 50%,100% 100%,0 100%);
+  position: absolute;
+  left: 40px;
+  top: 100px;
+}
+.big.up {
+  animation: moveUp .3s infinite alternate linear;
+}
+.big.down {
+  animation: moveDown .3s infinite alternate linear;
+}
+
+@keyframes moveUp {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes moveDown {
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+.small {
+   width: 15px;
+   height: 15px;
+   background: #abcdef;
+   position: absolute;
+   right: 50px;
+   top: 132.5px;
+   border-radius: 50%;
+   animation: move 1s linear infinite;
+}
+.small.a {
+  animation-delay: -0.99s;
+}
+.small.b {
+  animation-delay: -0.66s;
+}
+.small.c {
+  animation-delay: -0.33s;
+}
+@keyframes move {
+  to {
+    transform: translate(-170px,0);
+  }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+  <div class=wrap>
+    <div class="big up"></div>
+    <div class="big down"></div>
+    <div class="small a"></div>
+    <div class="small b"></div>
+    <div class="small c"></div>
+    <div class="small d"></div>
+  </div>
+</body>
+</html>
