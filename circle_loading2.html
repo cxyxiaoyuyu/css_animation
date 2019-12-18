@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style id="jsbin-css">
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      width: 300px;
+      height: 200px;
+      border: 1px solid red;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: #fff;
+      animation: expand 2s 2s;
+    }
+    @keyframes expand {
+      from {
+        clip-path: circle(0% at 50% 50%);
+      }
+      to {
+        clip-path: circle(100% at 50% 50%);
+      }
+    }
+    .circleProgress_wrapper {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      border-radius: 50%;
+      background: #fff;
+      /* border: 1px solid green; */
+      animation: scale 1s 2s forwards;
+    }
+    @keyframes scale{
+      to {
+        transform: scale(0);
+      }
+    }
+
+    .wrapper {
+      width: 30px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+    }
+
+    .right {
+      right: 0;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .circleProgress {
+      width: 60px;
+      height: 60px;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      -webkit-transform: rotate(45deg);
+    }
+
+    .rightcircle {
+      border-top: 2px solid transparent;
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      border-left: 2px solid red;
+      right: 0;
+      -webkit-animation: circleProgressLoad_right 2s linear forwards;
+    }
+
+    .leftcircle {
+      border-top: 2px solid red;
+      border-right: 2px solid transparent;
+      left: 0;
+      -webkit-animation: circleProgressLoad_left 2s linear forwards;
+    }
+
+    @keyframes circleProgressLoad_right {
+      0% {
+        -webkit-transform: rotate(45deg);
+        border-bottom: 2px solid red;
+        border-left: 2px solid red;
+      }
+
+      49% {
+        border-bottom: 2px solid red;
+        border-left: 2px solid red;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+      }
+
+      50%,
+      99% {
+        border: 2px solid red;
+        -webkit-transform: rotate(225deg);
+      }
+      100% {
+        border: 2px solid transparent;
+        transform: rotate(225deg);
+      }
+    }
+
+    @keyframes circleProgressLoad_left {
+      0%,
+      50% {
+        -webkit-transform: rotate(45deg);
+        border-right: 2px solid transparent;
+      }
+
+      51% {
+        border-right: 2px solid red;
+      }
+      98% {
+        border-left: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+      }
+      99% {
+        border-right: 2px solid red;
+        border-left: 2px solid red;
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+        -webkit-transform: rotate(225deg);
+      }
+      100% {
+        border: 2px solid transparent;
+        -webkit-transform: rotate(225deg);
+      }
+    }
+
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: -1;
+    }
+    .img img {
+      width: 100%;
+      height: 100%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class=img>
+      <img src="./back.jpg" alt="">
+    </div>
+    <div class="circleProgress_wrapper">
+      
+      <div class="wrapper right">
+        <div class="circleProgress rightcircle"></div>
+      </div>
+      <div class="wrapper left">
+        <div class="circleProgress leftcircle"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
