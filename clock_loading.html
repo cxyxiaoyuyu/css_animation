@@ -29,6 +29,14 @@ Released under the MIT license: http://jsbin.mit-license.org
   margin: 50px;
   position: relative;
 }
+.handle {
+  position: absolute;
+  width: 16px;
+  height: 13px;
+  background:black;
+  top: -20px;
+  clip-path: polygon(0 0,100% 0,100% 60%,80% 60%,80% 100%,20% 100%,20% 60%,0% 60%)
+}
 .border::after {
   content: '';
   display: block;
@@ -42,10 +50,10 @@ Released under the MIT license: http://jsbin.mit-license.org
   animation: duang 5s infinite;
 }
 @keyframes duang{
-  0%,90% {
+  0%,96% {
     transform: rotate(45deg);
   }
-  95% {
+  98% {
     transform: rotate(45deg) translateY(2px);
   }
   100% {
@@ -122,6 +130,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 </head>
 <body>
 <div class=border>
+    <div class=handle></div>
   <div class="wrap">
     <div class='circle left'>
       <div class="leftCircle"></div>
