@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/dalipogaqo/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<title>圆边框渐变</title>
+<style id="jsbin-css">
+.son-box{
+  width:60px;
+  height: 60px;
+  margin: 50px;
+  position: absolute;
+  content: '';
+  background: linear-gradient(#00dfff, #008dff,#2b7cdb,#2bddb1);
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+.son-box::after{
+  display: block;
+  content: '';
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  z-index: 1;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+}
+@keyframes rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="son-box"></div>
+</body>
+</html>

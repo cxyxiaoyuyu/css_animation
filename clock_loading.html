@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by anonymous (http://jsbin.com/jedenebopi/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+*{
+  box-sizing: border-box;
+}
+.border {
+  width: 70px;
+  height: 70px;
+  border: 5px solid black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  margin: 50px;
+  position: relative;
+}
+.border::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: black;
+  width: 12px;
+  height: 6px;
+  transform:rotate(45deg);
+  animation: duang 5s infinite;
+}
+@keyframes duang{
+  0%,90% {
+    transform: rotate(45deg);
+  }
+  95% {
+    transform: rotate(45deg) translateY(2px);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+.wrap {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  /* background: #abcdef; */
+}
+.circle {
+  width: 25px;
+  height: 50px;
+  position: absolute;
+  overflow: hidden;
+  /* border: 1px solid red; */
+}
+.circle.left {
+  left: 0;
+  top: 0;
+}
+.circle.right {
+  right: 0;
+  top: 0;
+}
+.leftCircle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg,#000 50%,#fff 50%);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: rotate_left 5s linear infinite;
+}
+
+.rightCircle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(90deg,#fff 50%,#000 50%);
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  animation: rotate_right 5s linear infinite;
+}
+@keyframes rotate_left {
+  0%,25%{
+    transform: rotate(0deg);
+  }
+  50%,75%{
+     transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate_right {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%,50% {
+    transform: rotate(180deg);
+    background: linear-gradient(90deg,#fff 51%,#000 51%);
+  }
+  75%,100% {
+    transform: rotate(360deg);
+    
+  }
+}
+</style>
+</head>
+<body>
+<div class=border>
+  <div class="wrap">
+    <div class='circle left'>
+      <div class="leftCircle"></div>
+    </div>
+    <div class='circle right'>
+      <div class="rightCircle"></div>
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>
