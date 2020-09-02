@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset=utf-8>
+    <title>文本对齐</title>
+    <style>
+        #singleLine {
+            border: 1px solid red;
+            width: 500px;
+        }
+        span {
+            border: 1px solid red;
+            display: inline-block;
+            width: 5em;
+            line-height: 20px;
+            height: 20px;
+            text-align: justify;
+            overflow: hidden;
+        }
+        span::after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            border: 1px solid red;
+        }
+
+        #multiLine-1 {
+            width: 500px;
+            border: 1px solid red;
+            text-align: justify;
+        }
+        #multiLine-2 {
+            width: 500px;
+            border: 1px solid red;
+            word-break: break-all;
+        }
+        #singleEllipsis {
+            width: 500px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid red;
+        }
+        #mulEllipsis {
+            border: 1px solid red;
+            width: 500px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        #flex {
+            height: 40px;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h4>姓名与联系方式两端对齐(单行文本)</h4>
+    <div id="singleLine">
+        <span>姓名</span><br>
+        <span>用户名</span><br>
+        <span>联系方式</span>
+    </div>
+
+    <h4>多行文本两端对齐(1)[text-align: justify;]</h4>
+    <div id="multiLine-1">
+        If you've been following the guides from the start, you will now have a small project that shows "Hello webpack". Now let's try to incorporate some other assets, like images, to see how they can be handled.
+    </div>
+
+    <h4>多行文本两端对齐(2)[word-break: break-all]</h4>
+    <div id="multiLine-2">
+        If you've been following the guides from the start, you will now have a small project that shows "Hello webpack". Now let's try to incorporate some other assets, like images, to see how they can be handled.
+    </div>
+
+    <h4>单行文字溢出省略号[text-overflow: ellipsis]</h4>
+    <div id="singleEllipsis">
+        If you've been following the guides from the start, you will now have a small project that shows "Hello webpack". Now let's try to incorporate some other assets, like images, to see how they can be handled.
+    </div>
+
+    <h4>多行文字溢出省略号[text-overflow: ellipsis]</h4>
+    <div id="mulEllipsis">
+        If you've been following the guides from the start, you will now have a small project that shows "Hello webpack". Now let's try to incorporate some other assets, like images, to see how they can be handled.
+    </div>
+
+    <h4>文字垂直居中,左右居中[display:flex;]</h4>
+    <div id="flex">
+        If you've been following the guides from the start.
+    </div>
+</body>
+<html>
